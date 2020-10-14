@@ -11,13 +11,13 @@ public class HotelReservationMain {
 		Scanner sc = new Scanner(System.in);
 
 		while (true) {
-			System.out.println("Enter the hotel name for adding rates: ");
+			System.out.println("Enter the hotel name for adding rates");
 			String hotelName = sc.next();
-			System.out.println("Enter rating: ");
+			System.out.println("Enter rating");
 			int rating = sc.nextInt();
-			System.out.println("Enter the Weekly rate: ");
+			System.out.println("Enter the Weekly rate");
 			int weeklyRate = sc.nextInt();
-			System.out.println("Enter the WeekEnd rate: ");
+			System.out.println("Enter the WeekEnd rate");
 			int weekEndRate = sc.nextInt();
 			HotelReservation.addRateAndHotelName(hotelName, rating, weeklyRate, weekEndRate);
 			System.out.println("Add more hotel- (Yes/No)");
@@ -28,14 +28,20 @@ public class HotelReservationMain {
 				break;
 		}
 
-		System.out.println("Find Cheapest Hotel in Date Range:- ");
+		System.out.println("Find Cheapest Hotel in Date Range:-");
 		System.out.println("Enter Start Date(YYYY-MM-DD):- ");
 		String startDate = sc.next();
 		System.out.println("Enter End Date(YYYY-MM-DD):- ");
 		String endDate = sc.next();
 		HotelReservation.findCheapestHotel(startDate, endDate);
 
+		System.out.println("Find Cheapest Best Rated Hotel in Date Range:-");
+		System.out.println("Enter Start Date(YYYY-MM-DD):- ");
+		String start = sc.next();
+		System.out.println("Enter End Date(YYYY-MM-DD):- ");
+		String end = sc.next();
+		HotelReservation.findCheapestBestRatedHotel(start, end);
+
 		sc.close();
 	}
-
 }
